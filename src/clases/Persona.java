@@ -14,6 +14,48 @@ public class Persona {
 	private Date fecha_nacimiento;
 	private String calle;
 
+	
+	
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getApellidos() {
+		return apellidos;
+	}
+
+	public void setApellidos(String apellidos) {
+		this.apellidos = apellidos;
+	}
+
+	public String getDni() {
+		return dni;
+	}
+
+	public void setDni(String dni) {
+		this.dni = dni;
+	}
+
+	public Date getFecha_nacimiento() {
+		return fecha_nacimiento;
+	}
+
+	public void setFecha_nacimiento(Date fecha_nacimiento) {
+		this.fecha_nacimiento = fecha_nacimiento;
+	}
+
+	public String getCalle() {
+		return calle;
+	}
+
+	public void setCalle(String calle) {
+		this.calle = calle;
+	}
+
 	private static final Pattern REGEXP = Pattern.compile("[0-9]{8}[A-Z]");
 	private static final String DIGITO_CONTROL = "TRWAGMYFPDXBNJZSQVHLCKE";
 	private static final String[] INVALIDOS = new String[] { "00000000T", "00000001R", "99999999R" };
@@ -55,8 +97,8 @@ public class Persona {
 //Método que realiza la diferencia entre la fecha actual y la fecha de	nacimiento de la persona para obtener su edad
 
 	public Integer obtenerEdad() {
-		return new Date().toInstant().atZone(ZoneId.systemDefault()).toLocalDate().getYear()
-				- fecha_nacimiento.toInstant().atZone(ZoneId.systemDefault()).toLocalDate().getYear();
+		return new Date().toInstant().atZone(ZoneId.systemDefault()).toLocalDate().getYear();
+		fecha_nacimiento.toInstant().atZone(ZoneId.systemDefault()).toLocalDate().getYear();
 	}
 
 	@Override
